@@ -23,7 +23,8 @@ async function fetchAnime(name) {
                     <span class="close-synopsis">X</span>
                     <div class="desc-paragraph">
                         <p>${anime.attributes.synopsis}</p>
-                    </div>
+                        <h3>${anime.attributes.url}</h3>
+                        </div>
                     </div>
                 </div>
             `;
