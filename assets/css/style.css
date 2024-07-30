@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: Arial, sans-serif;
+    background-color: #0f0f0f;
+    color: #ffff;
+}
+
+img {
+    z-index: 10;
+}
+
+input {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px;
+    height: 50%;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+p {
+    overflow: auto;
+    width: 100%;
+    height: 30vh;
+}
+
+#animeList {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.anime-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: calc(100%/3);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+.anime-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#openInfosAnimes {
+    background-color: aqua;
+}
+
+.desc-overlay.active {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(43, 44, 44);
+    z-index: 999;
+}
+.desc-overlay {
+    display: none;
+}
+
+.desc-overlay span {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2em;
+}
+
+.desc-paragraph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding:  5vh;
+}
