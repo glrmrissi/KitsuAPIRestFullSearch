@@ -16,14 +16,16 @@ async function fetchAnime(name) {
                 const animeItem = document.createElement('div');
                 animeItem.className = 'anime-item';
                 animeItem.innerHTML = `
+                <div class="anime-display">
                 <div class="anime-container"> 
                     <h4>${anime.attributes.canonicalTitle}</h4>
                     <img class="img-anime-container" id="openInfosAnimes" src="${anime.attributes.posterImage.small}" alt="${anime.attributes.canonicalTitle}">
-                    <div class="desc-overlay">
-                    <span class="close-synopsis">X</span>
-                    <div class="desc-paragraph">
-                        <p>${anime.attributes.synopsis}</p>
-                        <h3>${anime.attributes.url}</h3>
+                        <div class="desc-overlay">
+                            <span class="close-synopsis">X</span>
+                            <div class="desc-paragraph">
+                                <p>${anime.attributes.synopsis}</p>
+                                <h3>${anime.attributes.url}</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -34,7 +36,7 @@ async function fetchAnime(name) {
             closeSynopsis();
             console.log("Adicionado: addClickEventToImages")
         })
-        
+
         .catch(error => {
             console.error('Erro ao buscar animes:', error);
         });
