@@ -17,7 +17,7 @@ function addClickEventToImages() {
     });
 }
 
-// close-synopsis
+// Close-synopsis ___*( ￣皿￣)/#____
 
 function closeSynopsis() {
     const btnCloseSynopsis = document.querySelectorAll('.close-synopsis');
