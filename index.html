@@ -8,9 +8,26 @@
     <script src="assets/js/loadScripts.js"></script>
   </head>
   <body>
+    <header class="header-container">
+      <nav class="nav-bar">
+        <ul class="nav-list">
+          <li>
+            <a href="" class="nav-link">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="" class="nav-link">
+              FAQ
+            </a>
+          </li>
+        </ul>
+        <div class="search">
+          <input type="text" id="animeName" placeholder="Digite o nome do anime" />
+        </div>
+      </nav>
+    </header>
     <h1>Buscar Animes</h1>
-    <input type="text" id="animeName" placeholder="Digite o nome do anime" />
-    <button id="fetchButton">Buscar</button>
     <section class="animesSection" id="animeList"></section>
     <div class="trending" id="trendingAnimes">
       <h3>Em alta💢</h3>

@@ -42,7 +42,9 @@ async function fetchAnime(name) {
         });
 }
 
-document.getElementById('fetchButton').addEventListener('click', async function () {
-    const animeName = document.getElementById('animeName').value;
-    await fetchAnime(animeName); // Aguarda a função fetchAnime ser completada
+document.getElementById('animeName').addEventListener('keydown', function (event) {
+    if(event.key === 'Enter') {
+        const animeName = document.getElementById('animeName').value;
+        fetchAnime(animeName); // Aguarda a função fetchAnime ser completada    
+    }
 });
