@@ -2,117 +2,109 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    position: relative;
-    font-family: Arial, sans-serif;
-    background-color: #0f0f0f;
-    color: #ffff;
-}
-
-img {
-    z-index: 10;
-}
-
-input {
-    padding: 10px;
-    margin-right: 10px;
-}
-
-button {
-    padding: 10px;
-    height: 50%;
-}
-
-p {
-    overflow: auto;
-    width: 100%;
-    height: 30vh;
-}
-
-.animesSection {
-    display: flex;
-    justify-content: space-between;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    padding: 10vh;
-    background-color: #333232;
-    z-index: 1;
-}
-
-
-#animeList {
+  }
+  
+  body {
+    background-color: #000000;
+    opacity: 1;
+    background-image: radial-gradient(#ffffff 0.2px, transparent 0.9px),
+      radial-gradient(#ffffff 0.5px, #000000 0.5px);
+    background-size: 42px 42px;
+    background-position: 0 0, 21px 21px;
+    color: white;
+  }
+  
+  .animesSection {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    padding: 20px;
-    width: 100%;
-}
-
-.anime-item {
-    display: flex;
-}
-
-.anime-container {
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 7vh;
+    gap: 1vh;
+  }
+  
+  .anime-item {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
-}
-
-#openInfosAnimes {
-    background-color: aqua;
-}
-
-.desc-overlay.active {
-    position: absolute;
+    height: 55vh;
+    overflow: hidden;
+    border-radius: 8px;
+    background: rgb(1, 0, 10);
+    background: -moz-linear-gradient(
+      332deg,
+      rgba(1, 0, 10, 1) 0%,
+      rgba(0, 0, 32, 1) 52%,
+      rgba(16, 0, 41, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      332deg,
+      rgba(1, 0, 10, 1) 0%,
+      rgba(0, 0, 32, 1) 52%,
+      rgba(16, 0, 41, 1) 100%
+    );
+    background: linear-gradient(
+      332deg,
+      rgba(1, 0, 10, 1) 0%,
+      rgba(0, 0, 32, 1) 52%,
+      rgba(16, 0, 41, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#01000a",endColorstr="#100029",GradientType=1);
+  }
+  
+  .anime-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(43, 44, 44);
-    z-index: 11;
-}
-.desc-overlay {
-    display: none;
-}
-
-.desc-overlay span {
+    justify-content: center;
+  }
+  
+  .anime-container img {
+    border-radius: 8px;
+  }
+  
+  .anime-container img:hover {
+    filter: brightness(0.8);
     cursor: pointer;
+  }
+  
+  .desc-overlay {
+    display: none;
+  }
+  
+  .desc-overlay.active {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 2em;
-}
-
-.desc-paragraph {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    padding:  5vh;
-}
+    background-color: rgb(34, 34, 34);
+    padding: 1vh;
+    overflow: auto;
+  }
+  
+  .desc-overlay span {
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 2em;
+  }
 
-
-.trending {
+  .trending {
     position: fixed;
     top: 10px;
     right: 10px;
-    display: flex;
+    display: none;
     justify-content: right;
     flex-direction: column;
     width: 10vw;
     height: auto;
-    color: aqua;
+    color: rgb(255, 255, 255);
     z-index: 12;
 }
 
@@ -127,5 +119,6 @@ p {
 .animetrending img {
     width: auto;
     height: 10vh;
+    border-radius: 8px;
     object-fit: cover;
 }
