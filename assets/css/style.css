@@ -8,11 +8,21 @@ body {
   background-color: #000000;
   opacity: 1;
   background-image: radial-gradient(#ffffff 0.2px, transparent 0.9px),
-    radial-gradient(#ffffff 0.5px, #000000 0.5px);
+  radial-gradient(#ffffff 0.5px, #000000 0.5px);
   background-size: 42px 42px;
   background-position: 0 0, 21px 21px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: white;
+}
+
+.loading {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  filter:brightness(500%);
 }
 
 .header-container {
@@ -56,7 +66,7 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 7vh;
   gap: 1vh;
 }

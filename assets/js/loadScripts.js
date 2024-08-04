@@ -27,6 +27,7 @@ loadScripts([
     'assets/js/clickOverlay/click.js',
     'assets/js/search/animesConsume.js',
     'assets/js/trending/tdng.js',
+    'assets/js/loading/loading.js'
 ], function () {
     console.log("Scripts carregados");
 })

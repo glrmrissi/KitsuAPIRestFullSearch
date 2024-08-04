@@ -1,6 +1,6 @@
 async function fetchAnime(name) {
     const url = `https://kitsu.io/api/edge/anime?filter[text]=${name}`;
-
+    showLoading(); // SHOW
     fetch(url, {
         headers: {
             "Accept": "application/vnd.api+json",
@@ -10,7 +10,7 @@ async function fetchAnime(name) {
         .then(response => response.json())
         .then(data => {
             const animeList = document.getElementById('animeList');
-            animeList.innerHTML = '';  // Limpa resultados anteriores
+            animeList.innerHTML = '';  // Limpa os resultados anteriores
 
             data.data.forEach(anime => {
                 const animeItem = document.createElement('div');
@@ -34,6 +34,7 @@ async function fetchAnime(name) {
             });
             addClickEventToImages();
             closeSynopsis();
+            hideLoading(); // HIDE
             console.log("Adicionado: addClickEventToImages")
         })
 
