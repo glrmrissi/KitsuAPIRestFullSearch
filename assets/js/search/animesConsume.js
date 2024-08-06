@@ -23,8 +23,8 @@ async function fetchAnime(name) {
                         <div class="desc-overlay">
                             <span class="close-synopsis">X</span>
                             <div class="desc-paragraph">
-                                <p>${anime.attributes.synopsis}</p>
-                                <h3>${anime.attributes.url}</h3>
+                                <p>&nbsp; ${anime.attributes.synopsis}</p>
+                                <h3>Age: &nbsp;${anime.attributes.ageRating}</h3>
                             </div>
                         </div>
                     </div>

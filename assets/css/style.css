@@ -38,11 +38,19 @@ body {
 
 .nav-list {
   display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   list-style: none;
   gap: 2vh;
   margin-left: 3vh;
   padding: 1vh;
+}
+
+.logo-title span{
+  color: #ffffff;
+  background-color: #00e1ff;
+  border-radius: 5px;
 }
 
 .nav-link {
@@ -58,6 +66,7 @@ body {
 
 .search input {
   padding: 0.2vh;
+  margin-right: 2vh;
   border-radius: 8px;
 }
 
