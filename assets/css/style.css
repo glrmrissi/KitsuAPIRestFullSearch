@@ -148,11 +148,26 @@ body {
   justify-content: center;
 }
 
+.img-anime-container {
+  transition: 0.2s ease-out;
+}
+.card-front {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card-front h4 {
+  width: 250px;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
 .img-anime-container:hover {
   transform: scale(1.01);
-  border-radius: 8px;
   box-shadow: #ffffff 10px 10px, #000000 20px 20px, #eeeeee 30px 30px;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in;
   filter: brightness(0.8);
 }
 
