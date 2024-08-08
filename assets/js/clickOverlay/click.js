@@ -1,6 +1,6 @@
 
 function addClickEventToImages() {
-    const images = document.querySelectorAll('.img-anime-container');
+    const images = document.querySelectorAll('.card-front');
 
     images.forEach(image => {
         image.addEventListener('click', function () {

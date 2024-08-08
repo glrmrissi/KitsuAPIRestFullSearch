@@ -51,8 +51,8 @@ body {
 }
 
 .logo-title span{
-  color: #ffffff;
-  background-color: #000000;
+  color: #000000;
+  background-color: #ffffff;
   border-radius: 5px;
 }
 
@@ -124,7 +124,7 @@ body {
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 7vh;
-  gap: 1vh;
+  gap: 7vh;
 }
 
 .anime-item {
@@ -136,28 +136,10 @@ body {
   width: 100%;
   height: 55vh;
   overflow: hidden;
-  border-radius: 8px;
-  background: rgb(1, 0, 10);
-  background: -moz-linear-gradient(
-    332deg,
-    rgba(1, 0, 10, 1) 0%,
-    rgba(0, 0, 32, 1) 52%,
-    rgba(16, 0, 41, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    332deg,
-    rgba(1, 0, 10, 1) 0%,
-    rgba(0, 0, 32, 1) 52%,
-    rgba(16, 0, 41, 1) 100%
-  );
-  background: linear-gradient(
-    332deg,
-    rgba(1, 0, 10, 1) 0%,
-    rgba(0, 0, 32, 1) 52%,
-    rgba(16, 0, 41, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#01000a",endColorstr="#100029",GradientType=1);
+  background: rgb(0, 0, 0);
+  transition: 0.3s ease-in-out;
 }
+
 
 .anime-container {
   display: flex;
@@ -166,12 +148,15 @@ body {
   justify-content: center;
 }
 
-.anime-container img {
+.img-anime-container:hover {
+  transform: scale(1.01);
   border-radius: 8px;
+  box-shadow: #ffffff 10px 10px, #000000 20px 20px, #eeeeee 30px 30px;
+  transition: 0.3s ease-in-out;
+  filter: brightness(0.8);
 }
 
 .anime-container img:hover {
-  filter: brightness(0.8);
   cursor: pointer;
 }
 
@@ -186,17 +171,23 @@ body {
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgb(34, 34, 34);
-  padding: 1vh;
+  background-color: rgb(255, 255, 255);
+  color: #000;
+  padding: 10vh 1vh 4vh 1vh;
   overflow: auto;
 }
 
 .desc-overlay span {
   cursor: pointer;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 2em;
+  position:absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1em;
+}
+
+.desc-overlay span img {
+  width: 50px;
+  height: 100%;
 }
 
 .trending {

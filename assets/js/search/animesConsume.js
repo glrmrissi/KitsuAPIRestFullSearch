@@ -18,10 +18,12 @@ async function fetchAnime(name) {
                 animeItem.innerHTML = `
                 <div class="anime-display">
                 <div class="anime-container"> 
-                    <h4>${anime.attributes.canonicalTitle}</h4>
-                    <img class="img-anime-container" id="openInfosAnimes" src="${anime.attributes.posterImage.small}" alt="${anime.attributes.canonicalTitle}">
-                        <div class="desc-overlay">
-                            <span class="close-synopsis">X</span>
+                    <div class="card-front">
+                        <h4>${anime.attributes.canonicalTitle}</h4>
+                        <img class="img-anime-container" id="openInfosAnimes" src="${anime.attributes.posterImage.small}" alt="${anime.attributes.canonicalTitle}">
+                    </div>
+                    <div class="desc-overlay">
+                            <span class="close-synopsis"><img src="assets/img/close.svg" /></span>
                             <div class="desc-paragraph">
                                 <p>&nbsp; ${anime.attributes.synopsis}</p>
                                 <h3>Age: &nbsp;${anime.attributes.ageRating}</h3>
@@ -44,7 +46,7 @@ async function fetchAnime(name) {
 }
 
 document.getElementById('animeName').addEventListener('keydown', function (event) {
-    if(event.key === 'Enter') {
+    if (event.key === 'Enter') {
         const animeName = document.getElementById('animeName').value;
         fetchAnime(animeName); // Aguarda a função fetchAnime ser completada    
     }
