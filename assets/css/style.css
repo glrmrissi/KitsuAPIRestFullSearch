@@ -152,6 +152,7 @@ body {
 
 .img-anime-container {
   transition: 0.2s ease-out;
+  object-fit: cover;
 }
 .card-front {
   width: 100%;

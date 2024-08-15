@@ -18,6 +18,6 @@ async function fetchTrendingsAnimes() {
         });
     })
     .catch(error => {
-        console.log(error, "ERROR")
+        console.log(error, "%cERROR", "color: red;")
     })
 }
