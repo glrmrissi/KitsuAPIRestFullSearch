@@ -6,7 +6,7 @@ async function fetchTrendingsAnimes() {
         const trendingAnimes = document.getElementById('trendingAnimes');
 
         data.data.forEach(anime => {
-            const trend = document.createElement('div');
+            const trend = document.createElement('li');
             trend.className ='trendAnime';
             trend.innerHTML = `
                 <div class="animetrending">
@@ -21,3 +21,5 @@ async function fetchTrendingsAnimes() {
         console.log(error, "%cERROR", "color: red;")
     })
 }
+
+fetchTrendingsAnimes()

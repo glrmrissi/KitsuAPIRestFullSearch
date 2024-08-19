@@ -13,7 +13,7 @@ async function fetchAnime(name) {
             animeList.innerHTML = '';  // Limpa os resultados anteriores
 
             data.data.forEach(anime => {
-                const animeItem = document.createElement('div');
+                const animeItem = document.createElement('section');
                 animeItem.className = 'anime-item';
                 animeItem.innerHTML = `
                 <div class="anime-display">
@@ -34,6 +34,7 @@ async function fetchAnime(name) {
             `;
                 animeList.appendChild(animeItem);
             });
+  
             addClickEventToImages();
             closeSynopsis();
             hideLoading(); // HIDE

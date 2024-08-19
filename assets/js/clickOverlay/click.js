@@ -14,6 +14,7 @@ function addClickEventToImages() {
             } else {
                 console.log("Não achou a descrição!")
             }
+            
         });
     });
 }
