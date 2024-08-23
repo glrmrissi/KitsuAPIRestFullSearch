@@ -1,0 +1,8 @@
+@media (max-width: 1368px) {
+    .animesSection {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(3, 1fr);
+      }
+}

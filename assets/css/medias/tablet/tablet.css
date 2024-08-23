@@ -3,15 +3,14 @@
         display: grid;
         justify-content: center;
         align-items: center;
-        grid-template-columns: 1fr 1fr ;
-        padding: 10vh 2vh;
-        gap: 6vh;
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .anime-item {
-        height: 50vh;
-        padding: 2vh;
-        overflow:hidden;
+        height: 55vh;
+        padding: 1vh;
+        margin: 2vh 0;
+        overflow:visible;
       }
 
       .img-anime-container:hover {
@@ -19,5 +18,10 @@
         box-shadow: #ffffff 4px 4px, #000000 8px 8px, #eeeeee 12px 12px;
         transition: 0.3s ease-in;
         filter: brightness(0.8);
+      }
+
+      .trending {
+        display: flex;
+        flex-direction: row;
       }
 }

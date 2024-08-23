@@ -1,5 +1,5 @@
 @import url(style.css);
-@import url(medias/tablet/tablet.css);
 @import url(medias/notebook/notebook.css);
+@import url(medias/tablet/tablet.css);
 @import url(medias/smartphone/smartphone.css);
 @import url(medias/tv/tv.css);

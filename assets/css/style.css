@@ -142,8 +142,7 @@ body {
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(4, 1fr);
-  padding: 7vh;
-  gap: 7vh;
+  gap: 2vh;
   flex: 8;
 }
 
@@ -168,6 +167,8 @@ body {
 }
 
 .img-anime-container {
+  padding: 1vh;
+  margin: 1vh;
   transition: 0.2s ease-out;
   object-fit: cover;
 }
@@ -177,8 +178,8 @@ body {
   text-overflow: ellipsis;
 }
 
-.card-front h4 {
-  width: 250px;
+.card-front h3 {
+  width: 100%;
   white-space: nowrap; 
   overflow: hidden; 
   text-overflow: ellipsis; 
