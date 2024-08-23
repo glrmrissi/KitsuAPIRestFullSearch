@@ -10,7 +10,7 @@ body {
   background-color: #000000;
   opacity: 1;
   background-image: radial-gradient(#ffffff 0.2px, transparent 0.9px),
-  radial-gradient(#ffffff 0.5px, #000000 0.5px);
+    radial-gradient(#ffffff 0.5px, #000000 0.5px);
   background-size: 42px 42px;
   background-position: 0 0, 21px 21px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -20,6 +20,23 @@ body {
   flex-wrap: wrap;
 }
 
+#loadMoreButton {
+  cursor: pointer;
+  position: fixed;
+  display: none;
+  outline: none;
+  border: none;
+  padding: 0.4vh;
+  font-weight: 800;
+  bottom: 60px;
+  right: 50%;
+  background-color: rgb(255, 255, 255);
+  transition: ease-in-out 0.3s;
+  z-index: 13;
+}
+#loadMoreButton:hover {
+  background-color: #0066ff;
+}
 .loading {
   position: absolute;
   left: 50%;
@@ -27,7 +44,7 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  filter:brightness(500%);
+  filter: brightness(500%);
 }
 
 .header-container {
@@ -59,9 +76,9 @@ body {
   cursor: pointer;
 }
 
-.logo-title span{
+.logo-title span {
   color: #313131;
-  transition: ease-in-out .2s;
+  transition: ease-in-out 0.2s;
 }
 
 .logo-title span:hover {
@@ -102,12 +119,12 @@ body {
   color: #000000;
 }
 
-.search input:focus{
+.search input:focus {
   outline: 2px #ffffff;
   animation: shake 0.4s ease-in-out;
 }
 
-.search input::selection{
+.search input::selection {
   color: #0066ff;
 }
 
@@ -178,11 +195,11 @@ body {
   text-overflow: ellipsis;
 }
 
-.card-front h3 {
-  width: 100%;
-  white-space: nowrap; 
-  overflow: hidden; 
-  text-overflow: ellipsis; 
+.card-front h4 {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .img-anime-container:hover {
@@ -215,7 +232,7 @@ body {
 
 .desc-overlay span {
   cursor: pointer;
-  position:absolute;
+  position: absolute;
   top: 10px;
   left: 10px;
   font-size: 1em;

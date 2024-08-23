@@ -1,21 +1,28 @@
-async function fetchAnime(name) {
-    const url = `https://kitsu.io/api/edge/anime?filter[text]=${name}`;
-    showLoading(); // SHOW
-    fetch(url, {
-        headers: {
-            "Accept": "application/vnd.api+json",
-            "Content-Type": "application/vnd.api+json",
-        }
-    })
-        .then(response => response.json())
-        .then(data => {
-            const animeList = document.getElementById('animeList');
-            animeList.innerHTML = '';  // Limpa os resultados anteriores
+let nextPageUrl = null;
 
-            data.data.forEach(anime => {
-                const animeItem = document.createElement('section');
-                animeItem.className = 'anime-item';
-                animeItem.innerHTML = `
+async function fetchAnime(name, isLoadMore = false) {
+    const url = isLoadMore && nextPageUrl ? nextPageUrl : `https://kitsu.io/api/edge/anime?filter[text]=${name}`;
+    
+    showLoading(); // SHOW
+
+    try {
+        const response = await fetch(url, {
+            headers: {
+                "Accept": "application/vnd.api+json",
+                "Content-Type": "application/vnd.api+json",
+            }
+        });
+
+        const data = await response.json();
+
+        if (!isLoadMore) {
+            document.getElementById('animeList').innerHTML = '';  // Limpa os resultados anteriores só se não for uma carga adicional
+        }
+
+        data.data.forEach(anime => {
+            const animeItem = document.createElement('section');
+            animeItem.className = 'anime-item';
+            animeItem.innerHTML = `
                 <div class="anime-display">
                 <div class="anime-container"> 
                     <div class="card-front">
@@ -32,23 +39,37 @@ async function fetchAnime(name) {
                     </div>
                 </div>
             `;
-                animeList.appendChild(animeItem);
-            });
-  
-            addClickEventToImages();
-            closeSynopsis();
-            hideLoading(); // HIDE
-            console.log("Adicionado: addClickEventToImages")
-        })
-
-        .catch(error => {
-            console.error('Erro ao buscar animes:', error);
+            document.getElementById('animeList').appendChild(animeItem);
         });
+
+        nextPageUrl = data.links.next;  // Guarda a URL da próxima página
+
+        addClickEventToImages();
+        closeSynopsis();
+        hideLoading(); // HIDE
+
+    } catch (error) {
+        console.error('Erro ao buscar animes:', error);
+        hideLoading(); // Caso algum um erro ele esconder o loading
+    }
 }
 
 document.getElementById('animeName').addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         const animeName = document.getElementById('animeName').value;
-        fetchAnime(animeName); // Aguarda a função fetchAnime ser completada    
+        const loadMoreButton = document.getElementById("loadMoreButton");
+        loadMoreButton.style.display = "flex"
+        nextPageUrl = null; // Reinicia o controle de páginas ao começar uma nova busca
+        fetchAnime(animeName);
     }
 });
+
+// Função para carregar mais títulos
+function loadMoreAnime() {
+    const animeName = document.getElementById('animeName').value;
+    if (nextPageUrl) {
+        fetchAnime(animeName, true);  // Busca mais títulos sem remover os já exibidos
+    }
+}
+
+document.getElementById('loadMoreButton').addEventListener('click', loadMoreAnime);
