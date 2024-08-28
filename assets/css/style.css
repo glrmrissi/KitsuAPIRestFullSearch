@@ -257,6 +257,10 @@ body {
   width: 100%;
 }
 
+.trendingHidden{
+  display: none;
+} 
+
 .animetrending {
   display: flex;
   justify-content: center;

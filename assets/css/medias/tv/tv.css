@@ -1,0 +1,8 @@
+@media (min-width: 2560px) {
+    .animesSection {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(6, 1fr);
+      }
+}

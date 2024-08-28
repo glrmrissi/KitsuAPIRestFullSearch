@@ -1,6 +1,6 @@
 
-async function fetchTrendingsAnimes() {
-    fetch('https://kitsu.io/api/edge/trending/anime')
+ const fetchTrendingsAnimes = async () => {
+    fetch('https://kitsu.io/api/edge/trending/anime?page[limit]=5') // Tentando setar um limite para a página, deu errado
     .then(response => response.json())
     .then(data => {
         const trendingAnimes = document.getElementById('trendingAnimes');
