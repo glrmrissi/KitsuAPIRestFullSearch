@@ -7,7 +7,6 @@ function showLoading() {
     document.body.appendChild(div)
     label.appendChild(img)
     div.appendChild(label)
-
 }
 
 function hideLoading() {
